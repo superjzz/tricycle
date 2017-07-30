@@ -13,7 +13,8 @@
 #include "key.h"
 
 //add a different
-int Moto1,Moto2;    //电机PWM变量
+int Moto1;    //电机PWM变量
+int i;
 //extern float Position_KP;
 int main(void)
 { 
