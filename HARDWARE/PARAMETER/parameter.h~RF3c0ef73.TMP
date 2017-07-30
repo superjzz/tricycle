@@ -1,0 +1,38 @@
+#ifndef _PARAMETER_H_
+#define _PARAMETER_H_
+
+#include "stm32f4xx.h"
+#include "sys.h"
+/*********************系统相关结构体*********************/
+
+
+//PID结构体
+typedef struct
+{
+	float kp;
+	float kd;
+	float ki;
+}pid_f;
+
+
+//系统时间任务
+typedef struct
+{
+	u8 Duty_1ms;	//1ms任务
+	u8 Duty_5ms;	//5ms任务
+	u8 Duty_4ms;	//4ms任务
+	u8 Duty_10ms;	//10ms任务
+}TASK_TIME;
+
+//系统相关参数
+typedef struct
+{
+	u16 motor_speed;	//电机当前转速 r/min
+	u16 motorspeed_set;	//电机速度给定
+	s16 syspwm;
+}SYSTEM_VALUE;
+/*********************相关变量声明*********************/
+extern TASK_TIME Task_Time;//系统任务时间
+extern SYSTEM_VALUE System_Value;//系统参数
+extern pid_f Motor_Pid;//电机的PID
+#endif

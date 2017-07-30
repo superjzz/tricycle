@@ -1,0 +1,15 @@
+#ifndef _CONTROL_H_
+#define _CONTROL_H_
+
+#include "stm32f4xx.h"
+#include "parameter.h"
+#include "motor.h"
+void Get_MotorSpeed(float time);//电机转速计算
+s16 MotorSpeed_Ctrl(float Kp,float Ki,float Kd,float speed_set,float time);//电机转速环
+//摆杆控制
+//参数：执行周期
+//			PID对应参数
+//			摆杆位置目标角度angle_set
+//返回：PWM的值
+s16 Pendulum_Ctrl(float Kp,float Ki,float Kd,float angle_set,float time);
+#endif
